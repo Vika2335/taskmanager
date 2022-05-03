@@ -12,6 +12,14 @@ def about(request):
     return render(request, 'main/about.html')
 
 
+def dop(request):
+    return render(request, 'main/dop.html', {'title': 'Что хочу'})
+
+
+def pol(request):
+    return render(request, 'main/pol.html', {'title': 'Необходимое'})
+
+
 def create(request):
     error = ''
     if request.method == 'POST':
