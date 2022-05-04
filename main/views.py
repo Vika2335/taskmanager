@@ -17,7 +17,15 @@ def dop(request):
 
 
 def pol(request):
-    return render(request, 'main/pol.html', {'title': 'Необходимое'})
+    return render(request, 'main/pol.html', {'title': 'Погода'})
+
+
+def cal(request):
+    return render(request, 'main/cal.html', {'title': 'Калькулятор'})
+
+
+def mus(request):
+    return render(request, 'main/mus.html', {'title': 'Музыка'})
 
 
 def create(request):
