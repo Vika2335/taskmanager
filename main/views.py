@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
-
+import requests
 
 def index(request):
     tasks = Task.objects.order_by('-id')
@@ -17,7 +17,21 @@ def dop(request):
 
 
 def pol(request):
-    return render(request, 'main/pol.html', {'title': 'Погода'})
+    appid = 'a34d91e2deefb84f4dbc76e99ac5f31f'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=' + appid
+
+    city = 'Kostroma'
+    res = requests.get(url.format(city)).json()
+
+    city_info={
+        'city': city,
+        'temp': res['main']['temp'],
+        'icon': res['weather'][0]['icon']
+    }
+
+    context = {'info': city_info}
+
+    return render(request, 'main/pol.html', {'title': 'Погода'}, context)
 
 
 def cal(request):
