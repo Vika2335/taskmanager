@@ -31,7 +31,7 @@ def pol(request):
 
     context = {'info': city_info}
 
-    return render(request, 'main/pol.html', {'title': 'Погода'}, context)
+    return render(request, 'main/pol.html', context)
 
 
 def cal(request):

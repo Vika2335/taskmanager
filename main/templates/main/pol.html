@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-{{ title }}
+Погода
 {% endblock %}
 
 {% block content %}
@@ -16,11 +16,13 @@
                 </form>
 
             </div>
-            <div class="col-4 offset-1">
+            <div class="col-5 offset-1">
                 <h1>Информация</h1>
-                <div class="alert alert-dark">
-                    <b>Город:</b>{{info.city}}<br>
-                    <b>Температура:</b>{{info.temp}}<sup>0</sup><br>
+                <div class="alert alert-dark hstack">
+                    <div>
+                        <b>Город: </b>{{info.city}} <br>
+                        <b>Температура: </b>{{info.temp}}<sup>0</sup><br>
+                    </div>
                     <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
                 </div>
             </div>
