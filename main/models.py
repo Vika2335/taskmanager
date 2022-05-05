@@ -10,3 +10,10 @@ class Task(models.Model):
     class Meta():
         verbose_name = "Задача"
         verbose_name_plural = "Задачi"
+
+
+class City(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name

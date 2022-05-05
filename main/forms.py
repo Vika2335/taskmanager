@@ -1,4 +1,4 @@
-from .models import Task
+from .models import Task, City
 from django.forms import ModelForm, TextInput, Textarea
 
 class TaskForm(ModelForm):
@@ -13,5 +13,19 @@ class TaskForm(ModelForm):
             'task': Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Введи описание'
+            })
+        }
+
+
+class CityForm(ModelForm):
+    class Meta:
+        model = City
+        fields = ['name']
+        widgets = {
+            'name': TextInput(attrs={
+                'class': 'form-control',
+                'name': 'city',
+                'id': 'city',
+                'placeholder': 'Введите город'
             })
         }
